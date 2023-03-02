@@ -5,11 +5,15 @@ export const AnswerButton = styled.div`
         color: ${props => props.theme.colors.btnText};
         border: 2px solid;
         border-color: ${props => props.theme.colors.border};
-        height: 60px;
-        width: 140px;
+        max-height: 140px;
+        min-height: 70px;
+        min-width: 140px;
+        width: 150px;
         display: flex;
+        padding: 0.25rem;
         align-items: center;
         justify-content: center;
+        word-wrap: break-word;
         &:hover
         {
             cursor: pointer;

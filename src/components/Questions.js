@@ -1,7 +1,15 @@
 import { AnswerButton } from "./styledComponents/AnswerButton";
 
 export const Questions = (props) => {
+  const parser = new DOMParser();
   const short = props.value;
+  // const short = props.value.forEach(element => 
+  //   {
+  //     const newQuestion = element.question;
+  //     element.question = parser.parseFromString(`<!doctype html><body>${newQuestion}`, 'text/html')
+  //     return element;
+  //   });
+  console.log(short)
   const hasAnswered = props.hasAnswered;
   console.log(hasAnswered);
 
@@ -10,7 +18,8 @@ export const Questions = (props) => {
     if (input.type === "multiple") {
       return (
         <div className="question-multiple" key={index * 10} id={index}>
-          <h3>{input.question}</h3>
+          {/* <h3>{input.question}</h3> */}
+          <h3>{parser.parseFromString(`<!doctype html><body>${input.question}`, 'text/html').body.textContent}</h3>
           <div className="answer-box">
             {!hasAnswered[index].answered
               ? hasAnswered[index].choices.map((data, count) => {
@@ -23,7 +32,7 @@ export const Questions = (props) => {
                       <AnswerButton
                         onClick={(event) => props.logAnswer(event, index)}
                       >
-                        {data}
+                        {parser.parseFromString(`<!doctype html><body>${data}`, 'text/html').body.textContent}
                       </AnswerButton>
                     </div>
                   );

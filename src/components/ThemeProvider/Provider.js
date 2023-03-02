@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
 
     body
     {
+        padding-top: 20px;
+        padding-bottom: 40px;
         font-family: ${props => props.theme.fonts.text}, sans-serif;
         background-color: ${props => props.theme.background};
     }
@@ -115,6 +117,11 @@ const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         width: 700px;
         margin: 0 auto;
+    }
+
+    .answer-boolean
+    {
+        gap: 20px;
     }
 
     .question-multiple, .question-boolean
