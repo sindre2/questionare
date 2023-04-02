@@ -176,6 +176,29 @@ const GlobalStyle = createGlobalStyle`
             background-color: salmon;
         }
     }
+
+    @media screen and (max-width: 725px){
+        .question-container {
+            margin: 0;
+        }
+
+        .question-boolean, 
+        .question-multiple {
+            text-align: center;
+            overflow-wrap: break-word;
+        }
+        .question-boolean h3, 
+        .question-multiple h3 {
+            width: 50%;
+            margin: 20px auto;
+        }
+        
+        .answer-box {
+            height: 200px;
+            flex-wrap: wrap;
+            max-width: 50%;
+        }
+    }
 `
 
 const Provider = ({ children }) => 
